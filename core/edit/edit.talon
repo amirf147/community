@@ -14,46 +14,47 @@ next one: edit.find_next()
 # Navigation
 
 # The reason for these spoken forms is that "page up" and "page down" are globally defined as keys.
-scroll up: edit.page_up()
-scroll down: edit.page_down()
+#scroll up: edit.page_up()
+#scroll down: edit.page_down()
 
 # go left, go left left down, go 5 left 2 down
 # go word left, go 2 words right
-go <user.navigation_step>+: user.perform_navigation_steps(navigation_step_list)
+<user.navigation_step>+: user.perform_navigation_steps(navigation_step_list)
 
 latch: edit.line_start()
-go line end | tail: edit.line_end()
+ratch: edit.line_end()
 
-go way left:
-    edit.line_start()
-    edit.line_start()
-go way right: edit.line_end()
-go way up: edit.file_start()
-go way down: edit.file_end()
+#go way left:
+#    edit.line_start()
+#    edit.line_start()
+#go way right: edit.line_end()
 
-go top: edit.file_start()
-go bottom: edit.file_end()
+topper: edit.file_start()
+bottom: edit.file_end()
 
-go page up: edit.page_up()
-go page down: edit.page_down()
+#go top: edit.file_start()
+#go bottom: edit.file_end()
+
+flow: edit.page_up()
+fell: edit.page_down()
 
 # Selecting
 
-select left: edit.extend_left()
-select right: edit.extend_right()
+brick: edit.extend_left()
+frick: edit.extend_right()
 select up: edit.extend_line_up()
 select down: edit.extend_line_down()
 
-select word left: edit.extend_word_left()
-select word right: edit.extend_word_right()
+blush: edit.extend_word_left()
+flusch: edit.extend_word_right()
 
 # Indentation
 indent [more]: edit.indent_more()
 (indent less | out dent): edit.indent_less()
 
 # Delete
-clear left: edit.delete()
-clear right: user.delete_right()
+clear: edit.delete()
+deli: user.delete_right()
 
 clear up:
     edit.extend_line_up()
@@ -63,11 +64,11 @@ clear down:
     edit.extend_line_down()
     edit.delete()
 
-clear word left:
+scratch:
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+dear:
     edit.extend_word_right()
     edit.delete()
 

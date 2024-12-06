@@ -15,7 +15,7 @@ class NavigationStep:
 mod = Module()
 
 
-@mod.capture(rule="[<number_small>] [word | words] {user.arrow_key}")
+@mod.capture(rule="[word | words] {user.arrow_key} [<number_small>]")
 def navigation_step(m) -> NavigationStep:
     type = "character"
     count = 1
